@@ -25,8 +25,28 @@ public class HomePage extends AppCompatActivity {
         papers_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomePage.this, HomePage.class);
-                startActivity(intent);
+                startActivity(new Intent(HomePage.this, HomePage.class));
+            }
+        });
+
+        papers_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomePage.this, HomePage.class));
+            }
+        });
+
+        papers_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomePage.this, HomePage.class));
+            }
+        });
+
+        papers_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomePage.this, HomePage.class));
             }
         });
     }
