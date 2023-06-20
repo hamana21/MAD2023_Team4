@@ -20,16 +20,17 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         Log.v(TITLE, "CREATE!");
         initView();
         setVariable();
     }
     private void setVariable(){
         loginbutton.setOnClickListener(new View.OnClickListener(){
+
             @Override
             public void onClick(View v){
-                if(!emailinput.getText().toString().isEmpty() && !passwordinput.getText().toString().isEmpty()){
+                if(emailinput.getText().toString().isEmpty() && passwordinput.getText().toString().isEmpty()){
                     Toast.makeText(LoginActivity.this, "Please fill in your particulars.", Toast.LENGTH_SHORT).show();
                 }
                 else if(emailinput.getText().toString().equals("madassg1") && passwordinput.getText().toString().equals("madassg1"))
