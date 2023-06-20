@@ -20,6 +20,7 @@ public class HomePage extends AppCompatActivity {
         account_btn = findViewById(R.id.imageButton4);
         about_btn = findViewById(R.id.imageButton5);
         buttonEvents();
+        //gay gay
     }
     private void buttonEvents(){
         papers_btn.setOnClickListener(new View.OnClickListener() {
