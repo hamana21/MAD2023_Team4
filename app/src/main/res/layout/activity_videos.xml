@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".VideosPage">
 
     <TextView
         android:id="@+id/video1"
@@ -150,7 +152,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/Video3"
+        android:id="@+id/video3"
         android:layout_width="197dp"
         android:layout_height="52dp"
         android:layout_marginStart="104dp"
