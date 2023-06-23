@@ -1,4 +1,4 @@
-package sg.edu.np.mad.madassg1mcqv2;
+package com.example.madasg1iman;
 
 public class QnA_Eng {
 

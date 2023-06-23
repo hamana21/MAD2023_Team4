@@ -1,4 +1,4 @@
-package sg.edu.np.mad.madassg1mcqv2;
+package com.example.madasg1iman;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,7 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+import com.example.madasg1iman.R;
+
+public class P6_SA2_Eng extends AppCompatActivity implements View.OnClickListener{
 
     TextView totalQuestions;
     TextView question;
@@ -25,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_sa2_eng);
 
         totalQuestions = findViewById(R.id.total_question);
         question = findViewById(R.id.question);
