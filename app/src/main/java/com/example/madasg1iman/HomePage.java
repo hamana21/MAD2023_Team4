@@ -22,24 +22,11 @@ public class HomePage extends AppCompatActivity {
         buttonEvents();
     }
     private void buttonEvents(){
-        papers_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(HomePage.this, HomePage.class));
-            }
-        });
 
         about_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HomePage.this, AboutMe.class));
-            }
-        });
-
-        papers_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(HomePage.this, HomePage.class));
             }
         });
 
