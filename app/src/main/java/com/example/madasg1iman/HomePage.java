@@ -31,10 +31,10 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
-        papers_btn.setOnClickListener(new View.OnClickListener() {
+        about_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomePage.this, HomePage.class));
+                startActivity(new Intent(HomePage.this, AboutMe.class));
             }
         });
 

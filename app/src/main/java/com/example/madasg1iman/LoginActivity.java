@@ -23,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         Log.v(TITLE, "CREATE!");
         initView();
-        //setVariable();
+        setVariable();
     }
     private void setVariable(){
         loginbutton.setOnClickListener(new View.OnClickListener(){
