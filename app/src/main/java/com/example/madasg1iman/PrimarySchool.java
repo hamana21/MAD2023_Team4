@@ -7,19 +7,18 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SelectEducationLevel extends AppCompatActivity {
+public class PrimarySchool extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_selecteducationlevel);
+        setContentView(R.layout.activity_pri);
+        Button primary6 = findViewById(R.id.pri18);
 
-        Button primaryButton = findViewById(R.id.primarySchBtn);
-        primaryButton.setOnClickListener(new View.OnClickListener()
-        {
+        primary6.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
-                Intent intent = new Intent(SelectEducationLevel.this, PrimarySchool.class);
+            public void onClick(View v) {
+                Intent intent = new Intent(PrimarySchool.this, PrimarySubjects.class);
                 startActivity(intent);
             }
         });

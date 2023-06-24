@@ -28,6 +28,12 @@
             android:name=".SelectEducationLevel"
             android:exported="false" />
         <activity
+            android:name=".PrimarySchool"
+            android:exported="false" />
+        <activity
+            android:name=".PrimarySubjects"
+            android:exported="false" />
+        <activity
             android:name=".P6SA2Eng"
             android:exported="false"/>
         <activity
