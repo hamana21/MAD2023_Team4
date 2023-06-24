@@ -33,7 +33,7 @@ public class HomePage extends AppCompatActivity {
         papers_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomePage.this, HomePage.class));
+                startActivity(new Intent(HomePage.this, P6_SA2_Eng.class));
             }
         });
 
