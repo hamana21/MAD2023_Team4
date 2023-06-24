@@ -19,8 +19,17 @@
             android:name=".AboutMe"
             android:exported="false" />
         <activity
+            android:name=".VideosPage"
+            android:exported="false" />
+        <activity
             android:name=".HomePage"
             android:exported="false" />
+        <activity
+            android:name=".SelectEducationLevel"
+            android:exported="false" />
+        <activity
+            android:name=".P6SA2Eng"
+            android:exported="false"/>
         <activity
             android:name=".Splashscreen"
             android:exported="true">

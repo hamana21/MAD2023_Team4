@@ -23,7 +23,7 @@ public class AboutMe extends AppCompatActivity {
         subscribeButton = findViewById(R.id.subscribeButton);
 
         String bio = "Welcome to Educademy! 🎓\n\n"
-                + "I am passionate about empowering students to excel in their exams and achieve academic success. As the team behind Educademy, our goal is to provide a comprehensive platform that helps students practice for their tests effectively.\n\n"
+                + "We are passionate about empowering students to excel in their exams and achieve academic success. As the team behind Educademy, our goal is to provide a comprehensive platform that helps students practice for their tests effectively.\n\n"
                 + "With Educademy, students can access a wide range of quizzes and video tutorials that cover various subjects and topics. Our carefully curated quizzes are designed to test and strengthen students' knowledge, while the video tutorials provide in-depth explanations and guidance.\n\n"
                 + "We believe that practice and understanding are the keys to mastering any subject. Through Educademy, we aim to support students in their learning journey by offering a convenient and interactive platform that fosters learning and growth.\n\n"
                 + "Join us today and embark on a rewarding educational experience with Educademy. Start practicing, enhancing your skills, and achieving your academic goals!\n";

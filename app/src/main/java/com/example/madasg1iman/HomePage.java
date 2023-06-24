@@ -9,7 +9,7 @@ import android.widget.ImageButton;
 
 public class HomePage extends AppCompatActivity {
 
-    private ImageButton papers_btn, online_btn, account_btn, about_btn,imageButton;
+    private ImageButton papers_btn, online_btn, account_btn, about_btn, imageButton, btmAboutButton, btmAccountBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +19,8 @@ public class HomePage extends AppCompatActivity {
         account_btn = findViewById(R.id.imageButton4);
         about_btn = findViewById(R.id.imageButton5);
         imageButton = findViewById(R.id.imageButton);
+        btmAboutButton = findViewById(R.id.btmAboutImg);
+        btmAccountBtn = findViewById(R.id.btmAccountBtn);
         buttonEvents();
     }
     private void buttonEvents(){
@@ -33,11 +35,45 @@ public class HomePage extends AppCompatActivity {
         papers_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomePage.this, P6_SA2_Eng.class));
+                startActivity(new Intent(HomePage.this, SelectEducationLevel.class));
+            }
+        });
+
+        online_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomePage.this, VideosPage.class));
+            }
+        });
+
+        account_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomePage.this, HomePage.class));
             }
         });
 
         imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Clear all activities
+                Intent intent = new Intent(HomePage.this, HomePage.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
+
+        btmAboutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Clear all activities
+                Intent intent = new Intent(HomePage.this, AboutMe.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
+
+        btmAccountBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Clear all activities
