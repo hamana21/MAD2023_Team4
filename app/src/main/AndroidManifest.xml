@@ -13,34 +13,34 @@
         android:theme="@style/Theme.MADAsg1Iman"
         tools:targetApi="31">
         <activity
-            android:name=".LoginActivity"
+            android:name="sg.np.madasg1iman.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".AboutMe"
+            android:name="sg.np.madasg1iman.AboutMe"
             android:exported="false" />
         <activity
-            android:name=".VideosPage"
+            android:name="sg.np.madasg1iman.VideosPage"
             android:exported="false" />
         <activity
-            android:name=".HomePage"
+            android:name="sg.np.madasg1iman.HomePage"
             android:exported="false" />
         <activity
-            android:name=".SelectEducationLevel"
+            android:name="sg.np.madasg1iman.SelectEducationLevel"
             android:exported="false" />
         <activity
-            android:name=".PrimarySchool"
+            android:name="sg.np.madasg1iman.PrimarySchool"
             android:exported="false" />
         <activity
-            android:name=".PrimarySubjects"
+            android:name="sg.np.madasg1iman.PrimarySubjects"
             android:exported="false" />
         <activity
-            android:name=".P6SA2Eng"
+            android:name="sg.np.madasg1iman.P6SA2Eng"
             android:exported="false"/>
         <activity
-            android:name=".P6SA2Math"
+            android:name="sg.np.madasg1iman.P6SA2Math"
             android:exported="false"/>
         <activity
-            android:name=".Splashscreen"
+            android:name="sg.np.madasg1iman.Splashscreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

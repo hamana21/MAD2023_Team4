@@ -7,7 +7,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.madasg1iman"
+        applicationId "sg.np.edu.mad.madasg1team04"
         minSdk 21
         targetSdk 33
         versionCode 1

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
-    tools:context=".HomePage">
+    tools:context="sg.np.madasg1iman.HomePage">
 
     <ImageView
         android:id="@+id/imageView3"

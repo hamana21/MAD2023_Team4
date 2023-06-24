@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/backgroundblue"
     android:padding="24dp"
-    tools:context="com.example.madasg1iman.P6SA2Math">
+    tools:context="com.example.madasg1iman.sg.example.madasg1iman.P6SA2Math">
 
     <TextView
         android:layout_width="wrap_content"

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/backgroundblue"
     android:padding="24dp"
-    tools:context=".P6SA2Eng">
+    tools:context="sg.np.madasg1iman.P6SA2Eng">
 
     <TextView
         android:layout_width="wrap_content"
