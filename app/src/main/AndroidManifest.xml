@@ -37,6 +37,9 @@
             android:name=".P6SA2Eng"
             android:exported="false"/>
         <activity
+            android:name=".P6SA2Math"
+            android:exported="false"/>
+        <activity
             android:name=".Splashscreen"
             android:exported="true">
             <intent-filter>

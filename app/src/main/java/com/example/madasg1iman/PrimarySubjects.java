@@ -14,11 +14,20 @@ public class PrimarySubjects extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_primarysubjects);
         Button primarySubject = findViewById(R.id.primarysubject1);
+        Button primarySubject2 = findViewById(R.id.primarysubject);
 
         primarySubject.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PrimarySubjects.this, P6SA2Eng.class);
+                startActivity(intent);
+            }
+        });
+
+        primarySubject2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PrimarySubjects.this, P6SA2Math.class);
                 startActivity(intent);
             }
         });
