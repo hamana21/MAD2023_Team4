@@ -16,7 +16,7 @@ import com.example.madasg1iman.R;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText emailinput, passwordinput;
+    private EditText userinput, passwordinput;
     private Button loginbutton, registerbutton;
 
     @Override
@@ -32,10 +32,10 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v){
-                if(emailinput.getText().toString().isEmpty() && passwordinput.getText().toString().isEmpty()){
+                if(userinput.getText().toString().isEmpty() && passwordinput.getText().toString().isEmpty()){
                     Toast.makeText(LoginActivity.this, "Please fill in your particulars.", Toast.LENGTH_SHORT).show();
                 }
-                else if(emailinput.getText().toString().equals("madassg1") && passwordinput.getText().toString().equals("madassg1"))
+                else if(userinput.getText().toString().equals("madassg1") && passwordinput.getText().toString().equals("madassg1"))
                 {
                     startActivity(new Intent(LoginActivity.this,HomePage.class));
                 }
@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void initView(){
-        emailinput = findViewById(R.id.enteremail);
+        userinput = findViewById(R.id.enteruser);
         passwordinput = findViewById(R.id.enterpassword);
         loginbutton = findViewById(R.id.login);
         registerbutton = findViewById(R.id.register);
