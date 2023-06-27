@@ -1,8 +1,8 @@
 # MADAsg1Team04
 Team Members:
-Muhammad Nuriman Bin Rahim (S10227895A)
-Hafeezur Rahman Bin Mohamed Ismail (S10227896)
-Chua Chow Lee Marcus (S10219337)
+Muhammad Nuriman Bin Rahim (S10227895A),
+Hafeezur Rahman Bin Mohamed Ismail (S10227896),
+Chua Chow Lee Marcus (S10219337),
 Kent Wong Kai Kiat (S10227707)
 
 App Name: Educademy
