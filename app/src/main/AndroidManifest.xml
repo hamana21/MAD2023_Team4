@@ -16,6 +16,9 @@
             android:name="sg.np.madasg1iman.LoginActivity"
             android:exported="false" />
         <activity
+            android:name="sg.np.madasg1iman.RegisterActivity"
+            android:exported="false" />
+        <activity
             android:name="sg.np.madasg1iman.AboutMe"
             android:exported="false" />
         <activity

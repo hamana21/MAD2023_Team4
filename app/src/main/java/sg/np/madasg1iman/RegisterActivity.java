@@ -18,7 +18,9 @@ public class RegisterActivity extends AppCompatActivity{
     Button register,cancel;
 
     SharedPreferences preferences;
-
+    private static final String SHARED_PREF_NAME = "MyPref";
+    private static final String KEY_NAME = "Username";
+    private static final String KEY_PASS = "Password";
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -28,8 +30,8 @@ public class RegisterActivity extends AppCompatActivity{
         register = findViewById(R.id.registerbutton);
         cancel = findViewById(R.id.cancel);
 
-        preferences = getSharedPreferences("Userinfo",0);
-
+        preferences = getSharedPreferences(SHARED_PREF_NAME,MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,15 +40,16 @@ public class RegisterActivity extends AppCompatActivity{
                 String passvalue = passwordreg.getText().toString();
 
                 if (uservalue.length()>1){
-                    SharedPreferences.Editor editor = preferences.edit();
-                    editor.putString("username",uservalue);
-                    editor.putString("password",passvalue);
+                    editor.putString(KEY_NAME,uservalue);
+                    editor.putString(KEY_PASS,passvalue);
                     editor.apply();
                     Toast.makeText(RegisterActivity.this, "User Registered!", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     Toast.makeText(RegisterActivity.this, "Please fill up the form.", Toast.LENGTH_SHORT).show();
                 }
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
         });
 
