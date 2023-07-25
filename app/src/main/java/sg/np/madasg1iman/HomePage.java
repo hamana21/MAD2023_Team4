@@ -87,8 +87,8 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
-
-        btmAccountBtn.setOnClickListener(new View.OnClickListener() {
+        /*
+        logoutbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Clear all activities
@@ -99,6 +99,6 @@ public class HomePage extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
             }
         });
-
+        */
     }
 }
