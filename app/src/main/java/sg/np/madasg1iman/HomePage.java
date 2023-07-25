@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.example.madasg1iman.R;
 
@@ -23,6 +24,7 @@ public class HomePage extends AppCompatActivity {
         imageButton = findViewById(R.id.imageButton);
         btmAboutButton = findViewById(R.id.btmAboutImg);
         btmAccountBtn = findViewById(R.id.btmAccountBtn);
+        //logoutbtn = findViewById(R.id.logout)
         buttonEvents();
     }
     private void buttonEvents(){
@@ -84,5 +86,19 @@ public class HomePage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        /*
+        logoutbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Clear all activities
+                Intent intent = new Intent(HomePage.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+                Toast.makeText(HomePage.this, "You have logged out!",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+        */
     }
 }
