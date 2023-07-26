@@ -14,18 +14,21 @@
         android:layout_height="wrap_content"
         android:text="Create your account here!!!"
         android:textColor="@color/black"
-        android:textSize="28sp"
+        android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/imageView5"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.173" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/enteruserreg"
         android:layout_width="329dp"
         android:layout_height="55dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginEnd="41dp"
         android:drawableStart="@drawable/email"
         android:drawablePadding="16dp"
         android:ems="10"
@@ -37,6 +40,7 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.619" />
@@ -45,6 +49,8 @@
         android:id="@+id/enterpasswordreg"
         android:layout_width="329dp"
         android:layout_height="55dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginEnd="41dp"
         android:drawableStart="@drawable/password"
         android:drawablePadding="16dp"
         android:ems="10"
@@ -93,9 +99,8 @@
         android:id="@+id/imageView5"
         android:layout_width="308dp"
         android:layout_height="379dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="104dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/penguin" />

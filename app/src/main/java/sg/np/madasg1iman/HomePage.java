@@ -6,16 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.madasg1iman.R;
 
-import de.hdodenhof.circleimageview.CircleImageView;
-
 public class HomePage extends AppCompatActivity {
 
-    private CircleImageView profilepic;
     private ImageButton papers_btn, online_btn, account_btn, about_btn, imageButton, btmAboutButton, btmAccountBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +24,6 @@ public class HomePage extends AppCompatActivity {
         imageButton = findViewById(R.id.imageButton);
         btmAboutButton = findViewById(R.id.btmAboutImg);
         btmAccountBtn = findViewById(R.id.btmAccountBtn);
-        profilepic = findViewById(R.id.imageView4);
         //logoutbtn = findViewById(R.id.logout)
         buttonEvents();
     }
@@ -102,15 +97,6 @@ public class HomePage extends AppCompatActivity {
                 finish();
                 Toast.makeText(HomePage.this, "You have logged out!",
                         Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        profilepic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomePage.this, ProfileActivity.class);
-                startActivity(intent);
-                finish();
             }
         });
 

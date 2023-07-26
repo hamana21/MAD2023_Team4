@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" >
+    xmlns:tools="http://schemas.android.com/tools">
 
     <application
         android:allowBackup="true"
@@ -11,10 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MADAsg1Iman"
-        tools:targetApi="31" >
-        <activity
-            android:name="sg.np.madasg1iman.ProfileActivity"
-            android:exported="false" />
+        tools:targetApi="31">
         <activity
             android:name="sg.np.madasg1iman.LoginActivity"
             android:exported="false" />
@@ -41,13 +38,13 @@
             android:exported="false" />
         <activity
             android:name="sg.np.madasg1iman.P6SA2Eng"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name="sg.np.madasg1iman.P6SA2Math"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name="sg.np.madasg1iman.Splashscreen"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
