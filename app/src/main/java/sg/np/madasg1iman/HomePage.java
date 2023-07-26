@@ -109,6 +109,7 @@ public class HomePage extends AppCompatActivity {
         profilepic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("I LOVE THIS MODULE MORE", "I LOVE THIS MODULE");
                 Intent intent = new Intent(HomePage.this, AboutMe.class);
                 startActivity(intent);
                 finish();
