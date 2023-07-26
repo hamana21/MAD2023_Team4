@@ -40,13 +40,7 @@ public class ProfileActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
     private DatabaseReference database;
-
     private Uri imagepath;
-
-
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
