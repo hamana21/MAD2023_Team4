@@ -30,14 +30,14 @@ public class LoginActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
 
-    public void onStart(){
+    /*public void onStart(){
         super.onStart();
         FirebaseUser currentuser = mAuth.getCurrentUser();
         if(currentuser != null){
             Intent intent = new Intent(LoginActivity.this, HomePage.class);
             startActivity(intent);
         }
-    }
+    }*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
