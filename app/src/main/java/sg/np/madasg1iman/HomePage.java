@@ -16,8 +16,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HomePage extends AppCompatActivity {
 
-//    private CircleImageView profilepic;
-    private ImageButton papers_btn, online_btn, account_btn, about_btn, imageButton, btmAboutButton, btmAccountBtn, profilepic;
+    private CircleImageView profilepic;
+    private ImageButton papers_btn, online_btn, account_btn, about_btn, imageButton, btmAboutButton, btmAccountBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,7 +109,6 @@ public class HomePage extends AppCompatActivity {
         profilepic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("Im gay", "Im extra gay");
                 Intent intent = new Intent(HomePage.this, AboutMe.class);
                 startActivity(intent);
                 finish();
