@@ -24,6 +24,12 @@ public class VideosPage extends AppCompatActivity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_videos);
 
+       initViews();
+
+
+    }
+
+    private void initViews() {
         // Initialize VideoViews
         videoView1 = findViewById(R.id.videoView1);
         videoView2 = findViewById(R.id.videoView2);
