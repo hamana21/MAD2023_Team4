@@ -41,8 +41,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
-//    implementation 'com.theartofdev.edmodo:android-ima ge-cropper:2.4.+'
-    implementation 'de.hdodenhof:circleimageview:3.0.0'
+
     implementation 'com.google.firebase:firebase-storage:20.2.1'
-    implementation 'com.squareup.picasso:picasso:2.71828'
+
 }

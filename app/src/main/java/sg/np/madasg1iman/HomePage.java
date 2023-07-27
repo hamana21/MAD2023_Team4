@@ -12,11 +12,10 @@ import android.widget.Toast;
 
 import com.example.madasg1iman.R;
 
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HomePage extends AppCompatActivity {
 
-    private CircleImageView profilepic;
+
     private ImageButton papers_btn, online_btn, account_btn, about_btn, imageButton, btmAboutButton, btmAccountBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +28,6 @@ public class HomePage extends AppCompatActivity {
         imageButton = findViewById(R.id.imageButton);
         btmAboutButton = findViewById(R.id.btmAboutImg);
         btmAccountBtn = findViewById(R.id.btmAccountBtn);
-        profilepic = findViewById(R.id.imageView4);
         //logoutbtn = findViewById(R.id.logout)
         buttonEvents();
     }
@@ -106,15 +104,7 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
-        profilepic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("I LOVE THIS MODULE MORE", "I LOVE THIS MODULE");
-                Intent intent = new Intent(HomePage.this, AboutMe.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+
 
     }
 }
