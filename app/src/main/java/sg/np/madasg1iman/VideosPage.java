@@ -1,80 +1,82 @@
 package sg.np.madasg1iman;
 
+import static android.content.ContentValues.TAG;
+
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.VideoView;
-import android.content.Intent;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.madasg1iman.R;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import sg.np.madasg1iman.models.VideoModels;
 
 public class VideosPage extends AppCompatActivity implements View.OnClickListener {
 
     private ImageView homeButton;
     private VideoView videoView1, videoView2, videoView3, videoView4;
     private TextView video1, video2, video3, video4;
+    private RecyclerView recyclerView;
+    private VideoAdapter videoAdapter;
+    private List<VideoModels> videoUrls;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_videos);
 
-       initViews();
+//       initViews();
+
+
+        recyclerView = findViewById(R.id.recyclerView);
+        videoUrls = new ArrayList<>();
+        // Add video links to the list
+        videoUrls.add(new VideoModels("https://vod-progressive.akamaized.net/exp=1690560727~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F1725%2F7%2F183629075%2F604232968.mp4~hmac=3b17bec0ce8b126ea853ed3c026c426629c46351da71e4f9a18c9d93ab4ce8ac/vimeo-prod-skyfire-std-us/01/1725/7/183629075/604232968.mp4?filename=file.mp4","Math lesson# 1"));
+        videoUrls.add(new VideoModels("https://vod-progressive.akamaized.net/exp=1690560727~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F1725%2F7%2F183629075%2F604232968.mp4~hmac=3b17bec0ce8b126ea853ed3c026c426629c46351da71e4f9a18c9d93ab4ce8ac/vimeo-prod-skyfire-std-us/01/1725/7/183629075/604232968.mp4?filename=file.mp4","Math lesson# 1"));
+        videoUrls.add(new VideoModels("https://vod-progressive.akamaized.net/exp=1690560727~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F1725%2F7%2F183629075%2F604232968.mp4~hmac=3b17bec0ce8b126ea853ed3c026c426629c46351da71e4f9a18c9d93ab4ce8ac/vimeo-prod-skyfire-std-us/01/1725/7/183629075/604232968.mp4?filename=file.mp4","Math lesson# 1"));
+        videoUrls.add(new VideoModels("https://vod-progressive.akamaized.net/exp=1690560727~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F1725%2F7%2F183629075%2F604232968.mp4~hmac=3b17bec0ce8b126ea853ed3c026c426629c46351da71e4f9a18c9d93ab4ce8ac/vimeo-prod-skyfire-std-us/01/1725/7/183629075/604232968.mp4?filename=file.mp4","Math lesson# 1"));
+
+
+        videoAdapter = new VideoAdapter(videoUrls, this);
+        recyclerView.setAdapter(videoAdapter);
 
 
     }
 
-    private void initViews() {
-        // Initialize VideoViews
-        videoView1 = findViewById(R.id.videoView1);
-        videoView2 = findViewById(R.id.videoView2);
-        videoView3 = findViewById(R.id.videoView3);
-        videoView4 = findViewById(R.id.videoView4);
-
-        // Initialize TextViews
-        video1 = findViewById(R.id.video1);
-        video2 = findViewById(R.id.video2);
-        video3 = findViewById(R.id.video3);
-        video4 = findViewById(R.id.video4);
-
-        // Set click listeners for VideoViews and TextViews
-        videoView1.setOnClickListener(this);
-        videoView2.setOnClickListener(this);
-        videoView3.setOnClickListener(this);
-        videoView4.setOnClickListener(this);
-        video1.setOnClickListener(this);
-        video2.setOnClickListener(this);
-        video3.setOnClickListener(this);
-        video4.setOnClickListener(this);
-    }
 
     @Override
     public void onClick(View view) {
-        // Check which view was clicked
-        int id = view.getId();
-        int videoResource = 0;
-
-        // Determine the video resource based on the clicked view
-        if (id == R.id.videoView1 || id == R.id.video1) {
-            videoResource = R.raw.videotutorial1;
-        } else if (id == R.id.videoView2 || id == R.id.video2) {
-            videoResource = R.raw.videotutorial1;
-        } else if (id == R.id.videoView3 || id == R.id.video3) {
-            videoResource = R.raw.videotutorial1;
-        } else if (id == R.id.videoView4 || id == R.id.video4) {
-            videoResource = R.raw.videotutorial1;
-        }
-
-        // Play the video if a valid video resource is found
-        if (videoResource != 0) {
-            Uri videoUri = Uri.parse("android.resource://" + getPackageName() + "/" + videoResource);
-            playVideo(videoUri);
-        }
+//        // Check which view was clicked
+//        int id = view.getId();
+//        int videoResource = 0;
+//
+//        // Determine the video resource based on the clicked view
+//        if (id == R.id.videoView1 || id == R.id.video1) {
+//            videoResource = R.raw.videotutorial1;
+//        } else if (id == R.id.videoView2 || id == R.id.video2) {
+//            videoResource = R.raw.videotutorial1;
+//        } else if (id == R.id.videoView3 || id == R.id.video3) {
+//            videoResource = R.raw.videotutorial1;
+//        } else if (id == R.id.videoView4 || id == R.id.video4) {
+//            videoResource = R.raw.videotutorial1;
+//        }
+//
+//        // Play the video if a valid video resource is found
+//        if (videoResource != 0) {
+//            Uri videoUri = Uri.parse("android.resource://" + getPackageName() + "/" + videoResource);
+//            playVideo(videoUri);
+//        }
     }
 
     private void playVideo(Uri videoUri) {
@@ -93,7 +95,7 @@ public class VideosPage extends AppCompatActivity implements View.OnClickListene
                 mediaPlayer.release();
             }
         });
-        homeButton = findViewById(R.id.homebutton);
+//        homeButton = findViewById(R.id.homebutton);
 
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
