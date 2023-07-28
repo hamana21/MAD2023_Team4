@@ -40,7 +40,7 @@ public class HomePage extends AppCompatActivity {
         img_contact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(HomePage.this,ContactUsActivity.class));
             }
         });
         about_btn.setOnClickListener(new View.OnClickListener() {
