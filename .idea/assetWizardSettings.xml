@@ -301,7 +301,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:$USER_HOME$/Library/Android/sdk/icons/material/materialicons/call/baseline_call_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/info/baseline_info_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -311,8 +311,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="baseline_call_24" />
-                            <entry key="sourceFile" value="$USER_HOME$/Downloads/Fiverr/Client's/Src/support_svg.svg" />
+                            <entry key="outputName" value="baseline_info_24" />
+                            <entry key="sourceFile" value="C:\Users\mdnur\Downloads\Fiverr\Client's\Src\support_svg.svg" />
                           </map>
                         </option>
                       </PersistentState>
