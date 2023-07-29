@@ -1,167 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    tools:context="sg.np.madasg1iman.VideosPage">
+    android:padding="16dp">
 
-    <TextView
-        android:id="@+id/video1"
-        android:layout_width="197dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="648dp"
-        android:text="Video1"
-        android:textAlignment="center"
-        android:textColor="#673AB7"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_video"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-    <TextView
-        android:id="@+id/video4"
-        android:layout_width="197dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="516dp"
-        android:layout_marginTop="1032dp"
-        android:text="Video4"
-        android:textAlignment="center"
-        android:textColor="#673AB7"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+</LinearLayout>
 
-    <TextView
-        android:id="@+id/video2"
-        android:layout_width="197dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="516dp"
-        android:layout_marginTop="640dp"
-        android:text="Video2"
-        android:textAlignment="center"
-        android:textColor="#673AB7"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <VideoView
-        android:id="@+id/videoView1"
-        android:layout_width="305dp"
-        android:layout_height="284dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.952"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13" />
-
-    <VideoView
-        android:id="@+id/videoView4"
-        android:layout_width="305dp"
-        android:layout_height="284dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="436dp"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.952"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13" />
-
-    <VideoView
-        android:id="@+id/videoView3"
-        android:layout_width="305dp"
-        android:layout_height="284dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="440dp"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.076"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13" />
-
-    <ImageView
-        android:id="@+id/imageView14"
-        android:layout_width="848dp"
-        android:layout_height="151dp"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/shapeableImageView3"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/btmtool" />
-
-    <ImageView
-        android:id="@+id/imageView13"
-        android:layout_width="1383dp"
-        android:layout_height="556dp"
-        android:layout_marginBottom="996dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.547"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/asdasdasd" />
-
-    <ImageView
-        android:id="@+id/profilepic"
-        android:layout_width="121dp"
-        android:layout_height="139dp"
-        android:layout_marginStart="636dp"
-        android:layout_marginTop="68dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/_70117_people_512x512" />
-
-    <VideoView
-        android:id="@+id/videoView2"
-        android:layout_width="305dp"
-        android:layout_height="284dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.076"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13" />
-
-    <ImageView
-        android:id="@+id/homebutton"
-        android:layout_width="111dp"
-        android:layout_height="74dp"
-        android:layout_marginStart="356dp"
-        android:layout_marginTop="1172dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/homeicon" />
-
-    <TextView
-        android:id="@+id/PageText"
-        android:layout_width="622dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="96dp"
-        android:text="Video Tutorials"
-        android:textAlignment="center"
-        android:textColor="#FBFAFA"
-        android:textSize="48sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/video3"
-        android:layout_width="197dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="1032dp"
-        android:text="Video3"
-        android:textAlignment="center"
-        android:textColor="#673AB7"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
