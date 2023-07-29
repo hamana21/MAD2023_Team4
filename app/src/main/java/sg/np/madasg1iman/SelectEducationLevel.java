@@ -12,6 +12,7 @@ import com.example.madasg1iman.R;
 public class SelectEducationLevel extends AppCompatActivity {
     private Button primaryButton;
     private Button secondaryButton;
+    private Button backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,11 +20,20 @@ public class SelectEducationLevel extends AppCompatActivity {
         setContentView(R.layout.select_education_level);
         primaryButton = findViewById(R.id.primarySchBtn);
         secondaryButton = findViewById(R.id.secondarySchBtn);
+        backButton = findViewById(R.id.btn_back);
 
         primaryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startPrimaryMcq();
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SelectEducationLevel.this, HomePage.class);
+                startActivity(intent);
             }
         });
 
