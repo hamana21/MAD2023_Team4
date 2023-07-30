@@ -89,5 +89,12 @@ public class HomePage extends AppCompatActivity {
                 startActivity(new Intent(HomePage.this, ContactUsActivity.class));
             }
         });
+
+        /*logout_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomePage.this, LoginActivity.class));
+            }
+        });*/
     }
 }
