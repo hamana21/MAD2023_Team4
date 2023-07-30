@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
-    tools:context="sg.np.madasg1iman.HomePage">
+    tools:context="com.example.fragment.MainActivity">
 
 
     <ImageView
@@ -13,12 +13,11 @@
         android:layout_width="414dp"
         android:layout_height="139dp"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/imageView7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/topborder" />
+        app:srcCompat="@drawable/topborder"
+        tools:layout_editor_absoluteY="-6dp" />
 
     <TextView
         android:id="@+id/HomepageTitle"
@@ -52,27 +51,13 @@
         app:layout_constraintTop_toBottomOf="@+id/HomepageTitle" />
 
     <ImageView
-        android:clickable="true"
-        android:id="@+id/imageView4"
-        android:layout_width="62dp"
-        android:layout_height="59dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView10"
-        app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintHorizontal_bias="0.9"
-        app:layout_constraintStart_toEndOf="@+id/HomepageTitle"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.164"
-        app:srcCompat="@drawable/_70117_people_512x512" />
-
-    <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="411dp"
-        android:layout_height="563dp"
+        android:layout_width="414dp"
+        android:layout_height="544dp"
         android:layout_marginEnd="1dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
         app:srcCompat="@drawable/backgroundnew" />
@@ -88,14 +73,6 @@
         app:srcCompat="@drawable/newbox" />
 
     <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="153dp"
-        android:layout_height="125dp"
-        app:srcCompat="@drawable/newbox"
-        tools:layout_editor_absoluteX="36dp"
-        tools:layout_editor_absoluteY="315dp" />
-
-    <ImageView
         android:id="@+id/imageView12"
         android:layout_width="153dp"
         android:layout_height="125dp"
@@ -104,6 +81,47 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView10"
         app:srcCompat="@drawable/newbox" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="153dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintEnd_toStartOf="@+id/imageView12"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView9"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/newbox" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="98dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:selectableItemBackground"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="@+id/imageView11"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="@+id/imageView11"
+        app:layout_constraintTop_toTopOf="@+id/imageView11"
+        app:srcCompat="@drawable/accnobg" />
+
+    <TextView
+        android:id="@+id/accountPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Account"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+        app:layout_constraintEnd_toEndOf="@+id/imageView11"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/imageView11"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton4"
+        app:layout_constraintVertical_bias="0.291" />
 
     <ImageView
         android:id="@+id/imageView10"
@@ -131,19 +149,6 @@
         app:layout_constraintVertical_bias="0.871" />
 
     <TextView
-        android:id="@+id/accountPage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
-        android:text="Account"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/imageView11"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="@+id/imageView11"
-        app:layout_constraintTop_toTopOf="@+id/imageView11" />
-
-    <TextView
         android:id="@+id/aboutPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -157,7 +162,7 @@
         app:layout_constraintTop_toTopOf="@+id/imageView12" />
 
     <TextView
-        android:id="@+id/videosPage"
+        android:id="@+id/VideosPage"
         android:layout_width="129dp"
         android:layout_height="17dp"
         android:layout_marginTop="92dp"
@@ -170,25 +175,11 @@
         app:layout_constraintTop_toTopOf="@+id/imageView10" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="84dp"
-        android:layout_height="69dp"
-        android:background="?android:selectableItemBackground"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/accountPage"
-        app:layout_constraintEnd_toEndOf="@+id/imageView11"
-        app:layout_constraintHorizontal_bias="0.461"
-        app:layout_constraintStart_toStartOf="@+id/imageView11"
-        app:layout_constraintTop_toTopOf="@+id/imageView11"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/accnobg" />
-
-    <ImageButton
         android:id="@+id/imageButton5"
         android:layout_width="102dp"
         android:layout_height="80dp"
-        android:scaleType="centerInside"
         android:background="?android:selectableItemBackground"
+        android:scaleType="centerInside"
         app:layout_constraintBottom_toTopOf="@+id/aboutPage"
         app:layout_constraintEnd_toEndOf="@+id/imageView12"
         app:layout_constraintHorizontal_bias="0.47"
@@ -215,29 +206,13 @@
         android:id="@+id/imageButton7"
         android:layout_width="102dp"
         android:layout_height="80dp"
-        android:scaleType="centerInside"
+        android:layout_marginTop="12dp"
         android:background="?android:selectableItemBackground"
-        app:layout_constraintBottom_toTopOf="@+id/videosPage"
+        android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="@+id/imageView10"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="@+id/imageView10"
         app:layout_constraintTop_toTopOf="@+id/imageView10"
-        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/videoiconnobg" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_nav"
-        android:layout_width="413dp"
-        android:layout_height="74dp"
-        android:background="@drawable/topborder"
-        android:scaleType="centerInside"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="1.0"
-        app:menu="@menu/bottom_nav_menu" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

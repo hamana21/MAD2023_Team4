@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "515620026590",
-    "project_id": "registerlogin-9b5fe",
-    "storage_bucket": "registerlogin-9b5fe.appspot.com"
+    "project_number": "106064511242",
+    "project_id": "educademy-4ac1e",
+    "storage_bucket": "educademy-4ac1e.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:515620026590:android:647e5a3c9b6755efed2a4f",
+        "mobilesdk_app_id": "1:106064511242:android:c88a6d362edab198b8faf3",
         "android_client_info": {
           "package_name": "sg.np.edu.mad.madasg1team04"
         }
       },
       "oauth_client": [
         {
-          "client_id": "515620026590-h12bh0d74lhenh0l0e9rrjtq6kc1v1b4.apps.googleusercontent.com",
+          "client_id": "106064511242-oj1vrokgigvkclcrqs14o3mnbbir20ms.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCmZ2simSvNdhVSXiyUGLb8YbcQaELDyz8"
+          "current_key": "AIzaSyDoWtGDKi7TUPgskTlO3MNJG-m-pSr5L7o"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "515620026590-h12bh0d74lhenh0l0e9rrjtq6kc1v1b4.apps.googleusercontent.com",
+              "client_id": "106064511242-oj1vrokgigvkclcrqs14o3mnbbir20ms.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

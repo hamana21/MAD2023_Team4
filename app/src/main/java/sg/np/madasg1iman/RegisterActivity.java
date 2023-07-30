@@ -5,10 +5,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
+
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,7 +19,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+
 
 public class RegisterActivity extends AppCompatActivity{
     EditText userreg, passwordreg;
@@ -35,6 +35,7 @@ public class RegisterActivity extends AppCompatActivity{
         passwordreg = findViewById(R.id.enterpasswordreg);
         register = findViewById(R.id.registerbutton);
         cancel = findViewById(R.id.cancel);
+
         mAuth = FirebaseAuth.getInstance();
 
 
@@ -45,6 +46,7 @@ public class RegisterActivity extends AppCompatActivity{
                 String uservalue, passvalue;
                 uservalue = String.valueOf(userreg.getText());
                 passvalue = String.valueOf(passwordreg.getText());
+
                 if (TextUtils.isEmpty(uservalue)){
                     Toast.makeText(RegisterActivity.this, "Please enter your username.", Toast.LENGTH_SHORT).show();
                     return;
@@ -57,6 +59,7 @@ public class RegisterActivity extends AppCompatActivity{
                     Toast.makeText(RegisterActivity.this, "Your password must be more than 5 characters long.", Toast.LENGTH_SHORT).show();
                     return;
                 }
+
                 else{mAuth.createUserWithEmailAndPassword(uservalue, passvalue)
 
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {

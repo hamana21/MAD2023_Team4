@@ -2,14 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-feature
-        android:name="android.hardware.telephony"
-        android:required="false" />
-
-    <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -21,10 +13,10 @@
         android:theme="@style/Theme.MADAsg1Iman"
         tools:targetApi="31">
         <activity
-            android:name="sg.np.madasg1iman.ContactUsActivity"
+            android:name="sg.np.madasg1iman.primaryQuiz"
             android:exported="false" />
         <activity
-            android:name="sg.np.madasg1iman.ProfileActivity"
+            android:name="sg.np.madasg1iman.primaryStartingPage"
             android:exported="false" />
         <activity
             android:name="sg.np.madasg1iman.LoginActivity"
@@ -45,16 +37,7 @@
             android:name="sg.np.madasg1iman.SelectEducationLevel"
             android:exported="false" />
         <activity
-            android:name="sg.np.madasg1iman.PrimarySchool"
-            android:exported="false" />
-        <activity
-            android:name="sg.np.madasg1iman.PrimarySubjects"
-            android:exported="false" />
-        <activity
-            android:name="sg.np.madasg1iman.P6SA2Eng"
-            android:exported="false" />
-        <activity
-            android:name="sg.np.madasg1iman.P6SA2Math"
+            android:name="sg.np.madasg1iman.ContactUsActivity"
             android:exported="false" />
         <activity
             android:name="sg.np.madasg1iman.Splashscreen"
