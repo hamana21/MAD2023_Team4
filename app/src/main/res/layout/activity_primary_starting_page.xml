@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_selection"
+    android:background="@drawable/backgroundneworange"
     android:padding="16dp"
     tools:context="sg.np.madasg1iman.primaryStartingPage">
 
@@ -13,7 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:text="Primary"
+        android:text="Primary Level"
+        android:textStyle="bold"
         android:textColor="@android:color/black"
         android:textSize="35sp" />
 
@@ -25,7 +26,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="32dp"
         android:text="Highscore: 0"
-        android:textSize="20sp" />
+        android:textStyle="bold"
+        android:textSize="25sp" />
 
     <Button
         android:id="@+id/buttonStartQuiz"
@@ -42,7 +44,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_alignStart="@id/buttonStartQuiz"
-        android:layout_below="@id/buttonStartQuiz" />
+        android:layout_below="@id/buttonStartQuiz"
+        />
 
     <Spinner
         android:id="@+id/spinnerPrimarySubject"

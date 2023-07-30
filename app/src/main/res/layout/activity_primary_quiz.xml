@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_selection"
+    android:background="@drawable/backgroundneworange"
     android:padding="16dp"
     tools:context="sg.np.madasg1iman.primaryQuiz">
 
@@ -13,6 +13,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Score: 0"
+        android:textSize="17dp"
+        android:textStyle="bold"
         android:textColor="@android:color/black"
         android:freezesText="true"/>
 
@@ -22,6 +24,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/textViewScore"
         android:text="Question: 1/x"
+        android:textSize="17dp"
+        android:textStyle="bold"
         android:textColor="@android:color/black"
         android:freezesText="true"/>
 
@@ -32,6 +36,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/textViewQuestionCount"
         android:text="Primary: "
+        android:textSize="17dp"
+        android:textStyle="bold"
         android:textColor="@android:color/black"
         android:freezesText="true"/>
 
@@ -41,6 +47,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/textViewPrimaryLevel"
         android:text="Subject: "
+        android:textSize="17dp"
+        android:textStyle="bold"
         android:textColor="@android:color/black"
         android:freezesText="true"/>
 
@@ -61,6 +69,7 @@
         android:layout_above="@id/radioGroup"
         android:layout_marginBottom="16dp"
         android:text="Here will be the question\nHere will be the question\nHere will be the question"
+        android:textStyle="bold"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="20sp"
@@ -77,6 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Option 1"
+            android:textStyle="bold"
             android:freezesText="true"/>
 
         <RadioButton
@@ -84,6 +94,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Option 2"
+            android:textStyle="bold"
             android:freezesText="true"/>
 
         <RadioButton
@@ -91,6 +102,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Option 3"
+            android:textStyle="bold"
             android:freezesText="true"/>
 
         <RadioButton
@@ -98,6 +110,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Option 4"
+            android:textStyle="bold"
             android:freezesText="true"/>
     </RadioGroup>
 
