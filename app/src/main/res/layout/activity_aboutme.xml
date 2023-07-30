@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
+    android:background="@drawable/madbackground"
     tools:context="sg.np.madasg1iman.AboutMe">
 
 
@@ -14,9 +15,9 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="108dp"
         android:contentDescription="Profile Image"
-        android:src="@drawable/mad_icon_removebg_preview"
+        android:src="@drawable/madlogo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,26 +52,25 @@
         android:id="@+id/emailEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginBottom="50dp"
         android:hint="Enter your email"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/subscribeButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appname" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/subscribeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="280dp"
+        android:layout_marginBottom="150dp"
         android:text="Subscribe"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newsletterTextView"
-        app:layout_constraintVertical_bias="0.258" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
