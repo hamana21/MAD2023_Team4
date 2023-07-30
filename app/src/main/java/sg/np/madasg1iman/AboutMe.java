@@ -20,7 +20,7 @@ public class AboutMe extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aboutme);
 
-///        bioTextView = findViewById(R.id.bioTextView);
+//        bioTextView = findViewById(R.id.bioTextView);
         emailEditText = findViewById(R.id.emailEditText);
         subscribeButton = findViewById(R.id.subscribeButton);
 
