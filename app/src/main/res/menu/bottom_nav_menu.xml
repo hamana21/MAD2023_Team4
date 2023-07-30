@@ -12,4 +12,8 @@
     <item android:id="@+id/account"
         android:title="Contact"
         android:icon="@drawable/baseline_call_24"/>
+
+    <item android:id="@+id/logout"
+        android:title="Logout"
+        android:icon="@drawable/baseline_logout_24"/>
 </menu>
