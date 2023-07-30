@@ -3,7 +3,7 @@ package sg.np.madasg1iman;
 import static android.provider.MediaStore.MediaColumns.TITLE;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
+
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -30,14 +30,18 @@ public class LoginActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
 
-    /*public void onStart(){
+    public void onStart(){
         super.onStart();
         FirebaseUser currentuser = mAuth.getCurrentUser();
+        Intent intent;
         if(currentuser != null){
-            Intent intent = new Intent(LoginActivity.this, HomePage.class);
-            startActivity(intent);
+            intent = new Intent(LoginActivity.this, HomePage.class);
         }
-    }*/
+        else{
+            intent = new Intent(LoginActivity.this, LoginActivity.class);
+        }
+        startActivity(intent);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,27 +55,6 @@ public class LoginActivity extends AppCompatActivity {
     }
     private void setVariable(){
         loginbutton.setOnClickListener(v -> {
-            /*String loginuser = userinput.getText().toString();
-            String loginpass = passwordinput.getText().toString();
-            String registereduser = preferences.getString(KEY_NAME,"");
-            String registeredpass = preferences.getString(KEY_PASS,"");
-            if (loginuser.equals(registereduser)&& loginpass.equals(registeredpass)){
-                Toast.makeText(LoginActivity.this, "Log In Successful!!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(LoginActivity.this, HomePage.class);
-                startActivity(intent);
-            }
-            else if (userinput.getText().toString().isEmpty()){
-                Toast.makeText(LoginActivity.this, "Please fill in your username.", Toast.LENGTH_SHORT).show();
-            }
-            else if (passwordinput.getText().toString().isEmpty()){
-                Toast.makeText(LoginActivity.this, "Please fill in your password.", Toast.LENGTH_SHORT).show();
-            }
-            else if(userinput.getText().toString().isEmpty() && passwordinput.getText().toString().isEmpty()){
-                Toast.makeText(LoginActivity.this, "Please fill in your particulars.", Toast.LENGTH_SHORT).show();
-            }
-            else {
-                Toast.makeText(LoginActivity.this, "Please fill in the correct particulars.", Toast.LENGTH_SHORT).show();
-            }*/
             String loginuser, loginpass;
             loginuser = String.valueOf(userinput.getText());
             loginpass = String.valueOf(passwordinput.getText());
