@@ -30,7 +30,7 @@ public class AboutMe extends AppCompatActivity {
                 + "We believe that practice and understanding are the keys to mastering any subject. Through Educademy, we aim to support students in their learning journey by offering a convenient and interactive platform that fosters learning and growth.\n\n"
                 + "Join us today and embark on a rewarding educational experience with Educademy. Start practicing, enhancing your skills, and achieving your academic goals!\n";
 
-        bioTextView.setText(bio);
+//        bioTextView.setText(bio);
 
         subscribeButton.setOnClickListener(v -> {
             String email = emailEditText.getText().toString().trim();
