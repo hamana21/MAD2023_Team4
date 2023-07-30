@@ -43,6 +43,7 @@ public class VideosPage extends AppCompatActivity implements View.OnClickListene
     private ArrayList<String> subject_list;
     private int selected_index = -1;
     private DatabaseReference databaseReference;
+    private ImageView btn_back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,7 @@ public class VideosPage extends AppCompatActivity implements View.OnClickListene
         subjectList();
         recyclerView = findViewById(R.id.recyclerView);
         imgFilter = findViewById(R.id.imgFilter);
+        btn_back = findViewById(R.id.btn_back);
 
         databaseReference = FirebaseDatabase.getInstance().getReference();
 //        videoUrlsList = fetchNewList(-1);
@@ -65,6 +67,13 @@ public class VideosPage extends AppCompatActivity implements View.OnClickListene
         // Add video links to the list
         videoAdapter = new VideoAdapter(videoUrlsList, this);
         recyclerView.setAdapter(videoAdapter);
+
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
         imgFilter.setOnClickListener(new View.OnClickListener() {
             @Override
