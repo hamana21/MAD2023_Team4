@@ -15,6 +15,7 @@ import sg.np.madasg1iman.AboutMe;
 import sg.np.madasg1iman.ContactUsActivity;
 import sg.np.madasg1iman.SelectEducationLevel;
 import sg.np.madasg1iman.VideosPage;
+import sg.np.madasg1iman.models.AlarmActivity;
 
 public class HomeFragment extends Fragment {
 
@@ -27,6 +28,27 @@ public class HomeFragment extends Fragment {
         ImageButton imageButton7 = rootView.findViewById(R.id.imageButton7);
         ImageButton imageButton4 = rootView.findViewById(R.id.imageButton4);
         ImageButton imageButton5 = rootView.findViewById(R.id.imageButton5);
+        ImageButton imageButton11 = rootView.findViewById(R.id.imageButton11);
+        ImageButton imageButton10 = rootView.findViewById(R.id.imageButton10);
+
+        imageButton11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Start the SelectEducationLevel activity
+                Intent intent = new Intent(getActivity(), AlarmActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        imageButton10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Start the SelectEducationLevel activity
+                Intent intent = new Intent(getActivity(), LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         imageButton6.setOnClickListener(new View.OnClickListener() {
             @Override

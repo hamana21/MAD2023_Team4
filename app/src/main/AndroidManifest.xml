@@ -45,6 +45,9 @@
             android:name="sg.np.madasg1iman.ContactUsActivity"
             android:exported="false" />
         <activity
+            android:name="sg.np.madasg1iman.models.AlarmActivity"
+            android:exported="false" />
+        <activity
             android:name="sg.np.madasg1iman.Splashscreen"
             android:exported="true">
             <intent-filter>
