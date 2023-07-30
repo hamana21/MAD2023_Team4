@@ -7,7 +7,6 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-
     <ImageView
         android:id="@+id/imgFilter"
         android:layout_width="wrap_content"

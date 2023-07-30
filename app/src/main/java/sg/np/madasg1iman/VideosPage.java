@@ -49,17 +49,18 @@ public class VideosPage extends AppCompatActivity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_videos);
 
-//       initViews();
-
 
         subjectList();
-        showSubjectAlertDialogue(0);
         recyclerView = findViewById(R.id.recyclerView);
         imgFilter = findViewById(R.id.imgFilter);
 
         databaseReference = FirebaseDatabase.getInstance().getReference();
-        videoUrlsList = fetchNewList(-1);
+//        videoUrlsList = fetchNewList(-1);
 
+        videoUrlsList = new ArrayList<>();
+        videoUrlsList.add(new VideoModels("https://firebasestorage.googleapis.com/v0/b/educademy-4ac1e.appspot.com/o/math1.mp4?alt=media&token=f3d4a5f1-74ae-4e7e-9aab-1b5b986e78d5", "Math lesson1"));
+        videoUrlsList.add(new VideoModels("https://firebasestorage.googleapis.com/v0/b/educademy-4ac1e.appspot.com/o/math2.mp4?alt=media&token=de3836ba-725a-4aab-bb8d-4de810968b98", "Math lesson2"));
+        videoUrlsList.add(new VideoModels("https://firebasestorage.googleapis.com/v0/b/educademy-4ac1e.appspot.com/o/math3.mp4?alt=media&token=23c4e83e-fbe6-4e47-b337-2962b8501b7f", "Math lesson3"));
 
         // Add video links to the list
         videoAdapter = new VideoAdapter(videoUrlsList, this);
@@ -102,6 +103,7 @@ public class VideosPage extends AppCompatActivity implements View.OnClickListene
             if (selected_index != -1) {
 
 
+                videoUrlsList = new ArrayList<>();
                 setSubject(selected_index);
 
                 Toast.makeText(VideosPage.this, "Subject " + subject_list.get(selected_index), Toast.LENGTH_SHORT).show();
@@ -121,9 +123,36 @@ public class VideosPage extends AppCompatActivity implements View.OnClickListene
     @SuppressLint("NotifyDataSetChanged")
     private void setSubject(int i) {
         //refreshAdapter
-        videoUrlsList = fetchNewList(i);
+
+        switch (i) {
+            case 0:
+                videoUrlsList = new ArrayList<>();
+                videoUrlsList.add(new VideoModels("https://firebasestorage.googleapis.com/v0/b/educademy-4ac1e.appspot.com/o/eng1.mp4?alt=media&token=95dd2939-54d5-4ed8-80a6-cb097b01a1b2", "English lesson1"));
+                videoUrlsList.add(new VideoModels("https://firebasestorage.googleapis.com/v0/b/educademy-4ac1e.appspot.com/o/eng2.mp4?alt=media&token=be75a194-0011-4490-9259-582522d01287", "English lesson2"));
+                videoUrlsList.add(new VideoModels("https://firebasestorage.googleapis.com/v0/b/educademy-4ac1e.appspot.com/o/eng3.mp4?alt=media&token=0320587c-bc5b-4e90-995e-075d67586650", "English lesson3"));
+
+                break;
+
+            case 1:
+                videoUrlsList = new ArrayList<>();
+
+                videoUrlsList.add(new VideoModels("https://firebasestorage.googleapis.com/v0/b/educademy-4ac1e.appspot.com/o/math1.mp4?alt=media&token=f3d4a5f1-74ae-4e7e-9aab-1b5b986e78d5", "Math lesson1"));
+                videoUrlsList.add(new VideoModels("https://firebasestorage.googleapis.com/v0/b/educademy-4ac1e.appspot.com/o/math2.mp4?alt=media&token=de3836ba-725a-4aab-bb8d-4de810968b98", "Math lesson2"));
+                videoUrlsList.add(new VideoModels("https://firebasestorage.googleapis.com/v0/b/educademy-4ac1e.appspot.com/o/math3.mp4?alt=media&token=23c4e83e-fbe6-4e47-b337-2962b8501b7f", "Math lesson3"));
+                break;
+
+
+            case 2:
+                videoUrlsList = new ArrayList<>();
+
+                videoUrlsList.add(new VideoModels("https://firebasestorage.googleapis.com/v0/b/educademy-4ac1e.appspot.com/o/sc1.mp4?alt=media&token=ea1a28b1-3a00-44db-a710-0c67c508cee0", "Science 1"));
+                videoUrlsList.add(new VideoModels("https://firebasestorage.googleapis.com/v0/b/educademy-4ac1e.appspot.com/o/sc2.mp4?alt=media&token=ce9105f0-fed4-4066-a4d5-950d20aeb8b1", "Science 2"));
+                videoUrlsList.add(new VideoModels("https://firebasestorage.googleapis.com/v0/b/educademy-4ac1e.appspot.com/o/sc3.mp4?alt=media&token=645385ed-49cf-47ae-a1ae-86e2f5193b3c", "Science 3"));
+                break;
+        }
 
         videoAdapter = new VideoAdapter(videoUrlsList, VideosPage.this);
+        recyclerView.setAdapter(videoAdapter);
         videoAdapter.notifyDataSetChanged();
 
     }
@@ -137,11 +166,31 @@ public class VideosPage extends AppCompatActivity implements View.OnClickListene
         switch (i) {
             case 0:
                 sub = "english";
+                videoUrlsList.add(new VideoModels("https://firebasestorage.googleapis.com/v0/b/educademy-4ac1e.appspot.com/o/eng1.mp4?alt=media&token=95dd2939-54d5-4ed8-80a6-cb097b01a1b2", "English lesson1"));
+                videoUrlsList.add(new VideoModels("https://firebasestorage.googleapis.com/v0/b/educademy-4ac1e.appspot.com/o/eng2.mp4?alt=media&token=be75a194-0011-4490-9259-582522d01287", "English lesson2"));
+                videoUrlsList.add(new VideoModels("https://firebasestorage.googleapis.com/v0/b/educademy-4ac1e.appspot.com/o/eng3.mp4?alt=media&token=0320587c-bc5b-4e90-995e-075d67586650", "English lesson3"));
+
+                break;
+
             case 1:
                 sub = "math";
+
+                videoUrlsList.add(new VideoModels("https://firebasestorage.googleapis.com/v0/b/educademy-4ac1e.appspot.com/o/math1.mp4?alt=media&token=f3d4a5f1-74ae-4e7e-9aab-1b5b986e78d5", "Math lesson1"));
+                videoUrlsList.add(new VideoModels("https://firebasestorage.googleapis.com/v0/b/educademy-4ac1e.appspot.com/o/math2.mp4?alt=media&token=de3836ba-725a-4aab-bb8d-4de810968b98", "Math lesson2"));
+                videoUrlsList.add(new VideoModels("https://firebasestorage.googleapis.com/v0/b/educademy-4ac1e.appspot.com/o/math3.mp4?alt=media&token=23c4e83e-fbe6-4e47-b337-2962b8501b7f", "Math lesson3"));
+                break;
+
+
             case 2:
                 sub = "science";
+                videoUrlsList.add(new VideoModels("https://firebasestorage.googleapis.com/v0/b/educademy-4ac1e.appspot.com/o/sc1.mp4?alt=media&token=ea1a28b1-3a00-44db-a710-0c67c508cee0", "Science 1"));
+                videoUrlsList.add(new VideoModels("https://firebasestorage.googleapis.com/v0/b/educademy-4ac1e.appspot.com/o/sc2.mp4?alt=media&token=ce9105f0-fed4-4066-a4d5-950d20aeb8b1", "Science 2"));
+                videoUrlsList.add(new VideoModels("https://firebasestorage.googleapis.com/v0/b/educademy-4ac1e.appspot.com/o/sc3.mp4?alt=media&token=645385ed-49cf-47ae-a1ae-86e2f5193b3c", "Science 3"));
+                break;
         }
+
+        videoAdapter.notifyDataSetChanged();
+
 
         DatabaseReference myRef = null;
         if (i == -1)
