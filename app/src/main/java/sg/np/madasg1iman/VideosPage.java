@@ -1,7 +1,8 @@
 package sg.np.madasg1iman;
 
-import static android.content.ContentValues.TAG;
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -10,12 +11,20 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.VideoView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.madasg1iman.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +38,11 @@ public class VideosPage extends AppCompatActivity implements View.OnClickListene
     private TextView video1, video2, video3, video4;
     private RecyclerView recyclerView;
     private VideoAdapter videoAdapter;
-    private List<VideoModels> videoUrls;
+    private List<VideoModels> videoUrlsList;
+    private ImageView imgFilter;
+    private ArrayList<String> subject_list;
+    private int selected_index = -1;
+    private DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,24 +52,130 @@ public class VideosPage extends AppCompatActivity implements View.OnClickListene
 //       initViews();
 
 
+        subjectList();
+        showSubjectAlertDialogue(0);
         recyclerView = findViewById(R.id.recyclerView);
-        videoUrls = new ArrayList<>();
+        imgFilter = findViewById(R.id.imgFilter);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+        videoUrlsList = fetchNewList(-1);
+
+
         // Add video links to the list
-        videoUrls.add(new VideoModels("https://vod-progressive.akamaized.net/exp=1690560727~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F1725%2F7%2F183629075%2F604232968.mp4~hmac=3b17bec0ce8b126ea853ed3c026c426629c46351da71e4f9a18c9d93ab4ce8ac/vimeo-prod-skyfire-std-us/01/1725/7/183629075/604232968.mp4?filename=file.mp4","Math lesson# 1"));
-        videoUrls.add(new VideoModels("https://vod-progressive.akamaized.net/exp=1690560727~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F1725%2F7%2F183629075%2F604232968.mp4~hmac=3b17bec0ce8b126ea853ed3c026c426629c46351da71e4f9a18c9d93ab4ce8ac/vimeo-prod-skyfire-std-us/01/1725/7/183629075/604232968.mp4?filename=file.mp4","Math lesson# 1"));
-        videoUrls.add(new VideoModels("https://vod-progressive.akamaized.net/exp=1690560727~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F1725%2F7%2F183629075%2F604232968.mp4~hmac=3b17bec0ce8b126ea853ed3c026c426629c46351da71e4f9a18c9d93ab4ce8ac/vimeo-prod-skyfire-std-us/01/1725/7/183629075/604232968.mp4?filename=file.mp4","Math lesson# 1"));
-        videoUrls.add(new VideoModels("https://vod-progressive.akamaized.net/exp=1690560727~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F1725%2F7%2F183629075%2F604232968.mp4~hmac=3b17bec0ce8b126ea853ed3c026c426629c46351da71e4f9a18c9d93ab4ce8ac/vimeo-prod-skyfire-std-us/01/1725/7/183629075/604232968.mp4?filename=file.mp4","Math lesson# 1"));
-
-
-        videoAdapter = new VideoAdapter(videoUrls, this);
+        videoAdapter = new VideoAdapter(videoUrlsList, this);
         recyclerView.setAdapter(videoAdapter);
 
+        imgFilter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showSubjectAlertDialogue(1);
+            }
+        });
 
+
+    }
+
+    private void subjectList() {
+        subject_list = new ArrayList<>();
+        subject_list.add("English");
+        subject_list.add("Math");
+        subject_list.add("Science");
+
+    }
+
+    private void showSubjectAlertDialogue(int x) {
+        AlertDialog.Builder alt_bld = new AlertDialog.Builder(VideosPage.this);
+
+        if (x == 0)
+            alt_bld.setCancelable(false);
+        else
+            alt_bld.setCancelable(true);
+
+
+        alt_bld.setIcon(R.drawable.baseline_filter_alt_24);
+        alt_bld.setTitle("Select Subject");
+        alt_bld.setSingleChoiceItems(subject_list.toArray(new String[0]), selected_index, (dialog, item) -> selected_index = item);
+
+        alt_bld.setNegativeButton("Cancel", (dialogInterface, i) -> dialogInterface.dismiss());
+
+        alt_bld.setPositiveButton("Save", (dialogInterface, i) -> {
+            if (selected_index != -1) {
+
+
+                setSubject(selected_index);
+
+                Toast.makeText(VideosPage.this, "Subject " + subject_list.get(selected_index), Toast.LENGTH_SHORT).show();
+                dialogInterface.dismiss();
+            } else {
+                Toast.makeText(VideosPage.this, "Select Any Option First", Toast.LENGTH_SHORT).show();
+            }
+
+        });
+        AlertDialog alert = alt_bld.create();
+        if (!VideosPage.this.isFinishing()) {
+            alert.show();
+        }
+
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    private void setSubject(int i) {
+        //refreshAdapter
+        videoUrlsList = fetchNewList(i);
+
+        videoAdapter = new VideoAdapter(videoUrlsList, VideosPage.this);
+        videoAdapter.notifyDataSetChanged();
+
+    }
+
+    private List<VideoModels> fetchNewList(int i) {
+
+        List<VideoModels> a = new ArrayList<>();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        String sub = "";
+
+        switch (i) {
+            case 0:
+                sub = "english";
+            case 1:
+                sub = "math";
+            case 2:
+                sub = "science";
+        }
+
+        DatabaseReference myRef = null;
+        if (i == -1)
+            myRef = database.getReference("videos").child("english");
+        else
+            myRef = database.getReference("videos").child(sub);
+
+
+        // Read from the database
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+                Log.d(TAG, "Value is: " + value);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
+
+
+        return a;
     }
 
 
     @Override
     public void onClick(View view) {
+
+
 //        // Check which view was clicked
 //        int id = view.getId();
 //        int videoResource = 0;

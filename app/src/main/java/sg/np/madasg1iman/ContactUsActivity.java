@@ -14,6 +14,10 @@ import androidx.cardview.widget.CardView;
 import com.example.madasg1iman.R;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import sg.np.madasg1iman.models.FeedbackModel;
 
 public class ContactUsActivity extends AppCompatActivity {
     MaterialButton btnSend;
@@ -142,7 +146,34 @@ public class ContactUsActivity extends AppCompatActivity {
     }
 
     private void uploadDataToFirebase() {
-        Toast.makeText(this, "All good", Toast.LENGTH_SHORT).show();
+
+        String name = txtName.getText().toString();
+        String email = txtEmailAddr.getText().toString();
+        String remarks = EdRemarks.getText().toString();
+
+        FeedbackModel data = new FeedbackModel(name, email, remarks);
+
+
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("feedback");
+
+        // Generate a new unique key for the data entry
+        String dataId = databaseReference.push().getKey();
+
+        assert dataId != null;
+        databaseReference.child(dataId).setValue(data)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+
+                        EdRemarks.setText("");
+                        txtEmailAddr.setText("");
+                        txtName.setText("");
+                        Toast.makeText(getApplicationContext(), "Feedback recorded, Thank You!", Toast.LENGTH_SHORT).show();
+
+                    } else {
+                        // Handle the error if the upload fails
+                        // You can use task.getException() to get the specific error details
+                    }
+                });
 
 
     }
