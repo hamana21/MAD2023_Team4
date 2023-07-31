@@ -36,11 +36,9 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent;
         if(currentuser != null){
             intent = new Intent(LoginActivity.this, HomePage.class);
+            startActivity(intent);
         }
-        else{
-            intent = new Intent(LoginActivity.this, LoginActivity.class);
-        }
-        startActivity(intent);
+
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {

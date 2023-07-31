@@ -88,7 +88,8 @@ public class AlarmActivity extends AppCompatActivity {
             Intent intent = new Intent(this,AlarmReceiver.class);
             pendingintent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
             alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingintent);
-            //Toast.makeText(this, )
+            Toast.makeText(this,"Alarm Set!",Toast.LENGTH_SHORT).show();
+
     }
 
 

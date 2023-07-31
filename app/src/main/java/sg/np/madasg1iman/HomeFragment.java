@@ -6,10 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
 import com.example.madasg1iman.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 import sg.np.madasg1iman.AboutMe;
 import sg.np.madasg1iman.ContactUsActivity;
@@ -37,15 +39,19 @@ public class HomeFragment extends Fragment {
                 // Start the SelectEducationLevel activity
                 Intent intent = new Intent(getActivity(), AlarmActivity.class);
                 startActivity(intent);
+
             }
         });
 
         imageButton10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Start the SelectEducationLevel activity
+                FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(getActivity(), LoginActivity.class);
                 startActivity(intent);
+                Toast.makeText(getActivity(), "You have logged out! Bye Bye!",
+                        Toast.LENGTH_SHORT).show();
+                return;
             }
         });
 
