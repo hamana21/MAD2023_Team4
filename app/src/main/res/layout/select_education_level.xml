@@ -39,38 +39,10 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
 
     <Button
-        android:id="@+id/secondarySchBtn"
-        android:layout_width="389dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="136dp"
-        android:backgroundTint="@color/peach"
-        android:text="Secondary School (Secondary 1 - 5)"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
-
-    <Button
-        android:id="@+id/aLevelSchBtn"
-        android:layout_width="389dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="220dp"
-        android:backgroundTint="@color/peach"
-        android:text="A Level (A Level Papers)"
-        android:textColor="@color/black"
-        android:textSize="21sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
-
-    <Button
         android:id="@+id/btn_back"
         android:layout_width="389dp"
         android:layout_height="60dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="28dp"
         android:backgroundTint="@color/peach"
         android:text="Back"
         android:textColor="@color/black"
@@ -79,7 +51,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.727"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/primarySchBtn" />
 
     <ImageView
         android:id="@+id/imageViewLogo"

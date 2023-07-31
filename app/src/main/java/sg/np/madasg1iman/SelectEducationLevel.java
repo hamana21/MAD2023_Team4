@@ -19,7 +19,7 @@ public class SelectEducationLevel extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.select_education_level);
         primaryButton = findViewById(R.id.primarySchBtn);
-        secondaryButton = findViewById(R.id.secondarySchBtn);
+//        secondaryButton = findViewById(R.id.secondarySchBtn);
         backButton = findViewById(R.id.btn_back);
 
         primaryButton.setOnClickListener(new View.OnClickListener() {
