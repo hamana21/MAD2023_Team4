@@ -12,10 +12,10 @@
 
     <ImageView
         android:id="@+id/Logo"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="162dp"
+        android:layout_height="136dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="16dp"
         android:contentDescription="Profile Image"
         android:src="@drawable/madlogo"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,17 +48,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailEditText" />
 
+
     <EditText
         android:id="@+id/emailEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="28dp"
         android:hint="Enter your email"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/subscribeButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -66,11 +66,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="150dp"
+        android:layout_marginBottom="88dp"
+        android:background="#F9BC8C"
+        android:backgroundTint="#FABD8D"
         android:text="Subscribe"
+        android:textColorHighlight="#9E3838"
+        android:textColorLink="#F9BA8D"
+        app:iconTint="#F9BC8C"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="#774545"
+        app:strokeColor="#FABC8D" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="400dp"
+        android:layout_height="310dp"
+        android:scaleType="center"
+        app:layout_constraintBottom_toTopOf="@+id/emailEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appname"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/backgroundneworange" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="342dp"
+        android:layout_height="307dp"
+        android:text="We are passionate about empowering students to excel in their exams and achieve academic success. As the team behind Educademy, our goal is to provide a comprehensive platform that helps students practice for their tests effectively. With Educademy, students can access a wide range of quizzes and video tutorials that cover various subjects and topics. Our carefully curated quizzes are designed to test and strengthen students' knowledge, while the video tutorials provide in-depth explanations and guidance. We believe that practice and understanding are the keys to mastering any subject. Through Educademy, we aim to support students in their learning journey by offering a convenient and interactive platform that fosters learning and growth. Join us today and embark on a rewarding educational experience with Educademy. Start practicing, enhancing your skills, and achieving your academic goals!"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.982"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintVertical_bias="1.0" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
