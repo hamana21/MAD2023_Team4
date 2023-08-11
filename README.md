@@ -27,10 +27,10 @@ Stage 1: App Features
 Stage 2: App Features
 Each member to implement one new feature**
 
-Other features to consider in Stage 2 (NOT FINALISED) - 
-1. Edit questions from admin
-2. Synchronous tests - i.e multiple people to take the same mock paper at the same time.
-3. Progression of user - i.e. records of the current user against topics over time.
-4. Include a splash screen also - something like a welcome opening page
+Other features to implemented in Stage 2 - 
+1. Added Firebase Database, Firebase Cloud Messaging, Alarm Page, Change UI for Login & Sign Up Page, Logout Button. (Marcus)
+2. Added fragments into homepage to navigate to Home, About, Contact. Changed home page background and border colours. (Iman)
+3. Added timer to test papers, added more test papers, added the timer to change to red when hit the 10 second marks, will show correct answers and wrong answers, added high score, added information on which question the user is on, score, subject, and primary level.
+4. Added videos page, FireBase videos, Contact Page.
 
 MAD concepts applied: RecylerView, EventHandling (onClick, EventHandler, AlertDialog, SharedPreferences for user data)
