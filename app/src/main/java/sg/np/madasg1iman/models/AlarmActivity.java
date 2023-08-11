@@ -40,36 +40,13 @@ public class AlarmActivity extends AppCompatActivity {
         binding = ActivityAlarmBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         createNotificationChannel();
+        //what each button does
+        binding.select.setOnClickListener(v -> showTimePicker());
 
-        binding.select.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showTimePicker();
-            }
+        binding.setalarm.setOnClickListener(v -> setAlarm());
 
-        });
+        binding.cancelalarm.setOnClickListener(v -> cancelAlarm());
 
-        binding.setalarm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setAlarm();
-            }
-        });
-
-        binding.cancelalarm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                cancelAlarm();
-            }
-        });
-
-        binding.home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent goback = new Intent(AlarmActivity.this, HomePage.class);
-                startActivity(goback);
-            }
-        });
     }
 
     private void cancelAlarm() {
@@ -80,20 +57,26 @@ public class AlarmActivity extends AppCompatActivity {
         }
         alarmManager.cancel(pendingintent);
         Toast.makeText(this,"Alarm Cancelled!",Toast.LENGTH_SHORT).show();
+        Intent goback = new Intent(AlarmActivity.this, HomePage.class);
+        startActivity(goback);
     }
 
     private void setAlarm() {
+        //setting alarm
         alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
             Intent intent = new Intent(this,AlarmReceiver.class);
             pendingintent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
             alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingintent);
             Toast.makeText(this,"Alarm Set!",Toast.LENGTH_SHORT).show();
+            Intent goback = new Intent(AlarmActivity.this, HomePage.class);
+            startActivity(goback);
 
     }
 
 
     private void showTimePicker() {
+        // choose time
         picker = new MaterialTimePicker.Builder()
                 .setTimeFormat(TimeFormat.CLOCK_12H)
                 .setHour(12)
@@ -104,28 +87,28 @@ public class AlarmActivity extends AppCompatActivity {
 
         picker.show(getSupportFragmentManager(),"educademy");
 
-        picker.addOnPositiveButtonClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (picker.getHour()>12){
-                        binding.select.setText(
-                                String.format("%02d",(picker.getHour())-12)+" : "+String.format("%02d",picker.getMinute()+" PM")
-                        );
-                }
-                else {
-                    binding.select.setText(picker.getHour() + " : " + picker.getMinute() + " AM");
-                }
-
-                calendar = Calendar.getInstance();
-                calendar.set(Calendar.HOUR_OF_DAY,picker.getHour());
-                calendar.set(Calendar.MINUTE,picker.getMinute());
-                calendar.set(Calendar.SECOND,0);
-                calendar.set(Calendar.MILLISECOND,0);
+        picker.addOnPositiveButtonClickListener(v -> {
+            if (picker.getHour()>12){
+                    binding.select.setText(
+                            //making it 12 hour clock/pm
+                            String.format("%02d",(picker.getHour())-12)+" : "+String.format("%02d",picker.getMinute()+" PM")
+                    );
             }
+            else {
+                binding.select.setText(picker.getHour() + " : " + picker.getMinute() + " AM");
+            }
+
+            //set the time
+            calendar = Calendar.getInstance();
+            calendar.set(Calendar.HOUR_OF_DAY,picker.getHour());
+            calendar.set(Calendar.MINUTE,picker.getMinute());
+            calendar.set(Calendar.SECOND,0);
+            calendar.set(Calendar.MILLISECOND,0);
         });
     }
     private void createNotificationChannel() {
         if (Build.VERSION.SDK_INT>= Build.VERSION_CODES.O){
+            //creating notification channel for AlarmReceiver
             CharSequence name = "educademyalarmchannel";
             String description = "Channel For Alarm Manager";
             int importance = NotificationManager.IMPORTANCE_HIGH;

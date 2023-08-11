@@ -1,5 +1,6 @@
 package sg.np.madasg1iman;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.widget.TextView;
@@ -39,6 +40,8 @@ public class AboutMe extends AppCompatActivity {
                 // You can send the email to your server or perform other actions
 
                 Toast.makeText(AboutMe.this, "Subscribed to newsletter!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(AboutMe.this, HomePage.class);
+                startActivity(intent);
             } else {
                 Toast.makeText(AboutMe.this, "Invalid email address", Toast.LENGTH_SHORT).show();
             }

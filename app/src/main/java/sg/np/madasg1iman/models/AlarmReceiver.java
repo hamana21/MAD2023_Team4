@@ -12,7 +12,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
 import sg.np.madasg1iman.HomePage;
-
+//Notification alert
 public class AlarmReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -20,14 +20,14 @@ public class AlarmReceiver extends BroadcastReceiver {
         Intent i = new Intent(context, HomePage.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent pending = PendingIntent.getActivity(context, 0, i, PendingIntent.FLAG_IMMUTABLE);
-
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "educademy")
-                .setContentTitle("Educademy Alarm")
-                .setContentText("Oh no! Your time is up!")
-                .setAutoCancel(true)
-                .setDefaults(NotificationCompat.DEFAULT_ALL)
-                .setPriority(NotificationCompat.PRIORITY_HIGH)
-                .setContentIntent(pending);
+        // Notification
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "educademy");
+        builder.setContentTitle("Educademy Alarm");
+        builder.setContentText("Oh no! Your time is up!");
+        builder.setAutoCancel(true);
+        builder.setDefaults(NotificationCompat.DEFAULT_ALL);
+        builder.setPriority(NotificationCompat.PRIORITY_HIGH);
+        builder.setContentIntent(pending);
 
         NotificationManagerCompat notimanager = NotificationManagerCompat.from(context);
         if (ActivityCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {

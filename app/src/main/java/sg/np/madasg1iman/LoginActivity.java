@@ -31,9 +31,11 @@ public class LoginActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
 
     public void onStart(){
+        // Remember Me Function
         super.onStart();
         FirebaseUser currentuser = mAuth.getCurrentUser();
         Intent intent;
+        //If there is a user, else will just start at login page
         if(currentuser != null){
             intent = new Intent(LoginActivity.this, HomePage.class);
             startActivity(intent);
@@ -56,24 +58,29 @@ public class LoginActivity extends AppCompatActivity {
             String loginuser, loginpass;
             loginuser = String.valueOf(userinput.getText());
             loginpass = String.valueOf(passwordinput.getText());
+            //conditions/requirements to login
+            //empty email
             if (TextUtils.isEmpty(loginuser)){
-                Toast.makeText(LoginActivity.this, "Please enter your username.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Please enter your email.", Toast.LENGTH_SHORT).show();
                 return;
             }
+            //empty password
             if (TextUtils.isEmpty(loginpass)){
                 Toast.makeText(LoginActivity.this, "Please enter your password.", Toast.LENGTH_SHORT).show();
                 return;
             }
+            //email cannot be equal to password
             if (loginuser == loginpass) {
-                Toast.makeText(LoginActivity.this, "Your password cannot be identical to your username.Try again!!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Your password cannot be identical to your email.Try again!!", Toast.LENGTH_SHORT).show();
                 return;
             }
-            if (loginuser.length()<5 || loginpass.length()<5){
-                Toast.makeText(LoginActivity.this, "Your details must be more than 5 characters long.", Toast.LENGTH_SHORT).show();
+            //password must be at least 6 letters
+            if (loginpass.length()<5){
+                Toast.makeText(LoginActivity.this, "Your password must be more than 5 characters long.", Toast.LENGTH_SHORT).show();
                 return;
             }
-            if (loginuser == loginpass) {
-                Toast.makeText(LoginActivity.this, "Your password cannot be identical to your username.Try again!!", Toast.LENGTH_SHORT).show();
+            if ((loginuser.length() < 15) || (loginuser.length() > 40)){
+                Toast.makeText(LoginActivity.this, "Invalid email.", Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -99,6 +106,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
         registerbutton.setOnClickListener(v -> {
+            //go to registeractivity
             Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
             startActivity(intent);
         });

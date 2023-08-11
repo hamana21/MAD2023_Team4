@@ -43,25 +43,12 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="109dp"
         android:layout_marginBottom="152dp"
-        android:text="CANCEL ALARM
-"
+        android:text="CANCEL"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/setalarm" />
 
-    <ImageView
-        android:id="@+id/home"
-        android:layout_width="54dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="661dp"
-        android:layout_marginEnd="341dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/baseline_home_24" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

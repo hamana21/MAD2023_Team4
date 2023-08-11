@@ -46,17 +46,25 @@ public class RegisterActivity extends AppCompatActivity{
                 String uservalue, passvalue;
                 uservalue = String.valueOf(userreg.getText());
                 passvalue = String.valueOf(passwordreg.getText());
-
+//conditions in order to register
+                //empty user
                 if (TextUtils.isEmpty(uservalue)){
                     Toast.makeText(RegisterActivity.this, "Please enter your username.", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                //empty password
                 if (TextUtils.isEmpty(passvalue)){
                     Toast.makeText(RegisterActivity.this, "Please enter your password.", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                //password is less than 6
                 if (passvalue.length()<6){
                     Toast.makeText(RegisterActivity.this, "Your password must be more than 5 characters long.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                //email username is not in between 6-30 charcaters
+                if ((uservalue.length() < 16) || (uservalue.length() > 40)){
+                    Toast.makeText(RegisterActivity.this, "Invalid email.", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -93,6 +101,7 @@ public class RegisterActivity extends AppCompatActivity{
 
     }
     public void cancelregister(){
+        //cancel the registration form
         Toast.makeText(RegisterActivity.this, "Registration Form Cancelled", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
         startActivity(intent);
